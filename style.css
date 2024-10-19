@@ -9,6 +9,10 @@
     margin: 0 auto;
 }
 
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Header */
 
 .header {
@@ -26,7 +30,7 @@
     letter-spacing: 5px;
 
     text-align: center;
-    font-size: 36px;
+    font-size: 31px;
     font-weight: bold;
     color: #8fe1e2;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -38,7 +42,7 @@
 
 .nav {
     position: absolute;
-    bottom: -20px;
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #bbd1fa;
@@ -96,11 +100,13 @@
 
 .news-item-header::before {
     content: "▶";
+    font-size: large;
     float: left;
 }
 
 .news-item-header::after {
     content: "↕";
+    font-size: large;
     float: right;
 }
 
@@ -140,7 +146,7 @@
 }
 
 .section {
-    border: 1px solid #8d8d8d;
+    border: 1px solid #555555;
     height: fit-content;
     margin: 5px 5px 10px 5px;
     border-radius: 3px;
@@ -172,6 +178,7 @@
 #process-text-control input {
     border: 1px solid #3f3f3f;
     text-indent: 3px;
+    font-size: 15px;
 }
 
 #process-text-control button {
