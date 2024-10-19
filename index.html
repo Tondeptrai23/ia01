@@ -78,55 +78,142 @@
                 </div>
 
                 <div class="content">
-                    <div id="process-text">
-                        <div id="process-text-header">
-                            <h2>Process Text</h2>
+                    <div class="section">
+
+                        <div id="process-text" class="section-header">
+                            <h2 id="process-text-header">Process Text</h2>
+                            <div id="process-text-control">
+                                <input type="text" placeholder="a[a-z]"
+                                    name="search" id="search-ipn">
+                                <button id="highlight-btn">Highlight</button>
+                                <button id="delete-btn">Delete</button>
+                                <button id="reset-btn">Reset</button>
+                            </div>
+                            <div id="sample-text-control">
+                                <p class="sample">SampleText</p>
+                                <input type="color" name="color" id="color-ipn">
+                                <button id="style-btn">🛠️</button>
+                            </div>
+
                         </div>
-                        <div id="process-text-control">
-                            <input type="text" placeholder="a[a-z]"
-                                name="search" id="search-ipn">
-                            <button id="highlight-btn">Highlight</button>
-                            <button id="delete-btn">Delete</button>
-                            <button id="reset-btn">Reset</button>
+                        <div id="main-text">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Nullam euismod nunc
+                            arcu,
+                            at auctor odio dapibus id. Curabitur sapien velit,
+                            fermentum sed lacinia a, mollis vitae quam. Donec
+                            nec
+                            dolor sit amet sem blandit lobortis ac nec est.
+                            Aenean
+                            feugiat neque vel malesuada bibendum. Aenean non
+                            massa
+                            massa. Proin vel consequat risus. Nunc congue augue
+                            in
+                            mauris sagittis, eu elementum urna iaculis. Fusce
+                            sollicitudin aliquet tempor. Nunc in commodo ante.
+                            Fusce
+                            nec ullamcorper lacus, eu placerat neque. Aliquam
+                            viverra scelerisque ullamcorper.
+
+                            In quis fermentum tellus. Nullam non pellentesque
+                            ligula, vel pulvinar erat. Praesent accumsan enim
+                            nec
+                            nisi tempus aliquet et nec risus. Nulla facilisi.
+                            Fusce
+                            non orci quis erat volutpat euismod et non orci.
+                            Duis
+                            egestas finibus velit, ac viverra orci. Maecenas nec
+                            orci a nisl dapibus blandit. Nunc eget eros dapibus,
+                            lobortis nisi vel, aliquam urna. Nullam posuere
+                            sapien
+                            vitae dui sodales efficitur in ac nisi. Aenean
+                            sodales
+                            velit ut lorem porta lacinia. Pellentesque sed
+                            tempus
+                            nisi. Phasellus tincidunt velit odio, id mollis diam
+                            ultrices ac.</div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header" id="drag-drop">
+                            <h2 id="drag-drop-header">Drag & Drop</h2>
+
+                            <div id="drag-drop-control">
+                                <div class="custom-select-container">
+                                    <select id="animal-dropdown"
+                                        class="custom-select">
+                                        <option value="mouse">🐁</option>
+                                        <option value="buffalo">🐃</option>
+                                        <option value="tiger">🐅</option>
+                                        <option value="rabbit">🐇</option>
+                                        <option value="dragon">🐉</option>
+                                        <option value="snake">🐍</option>
+                                        <option value="horse">🐎</option>
+                                        <option value="goat">🐐</option>
+                                        <option value="monkey">🐒</option>
+                                        <option value="rooster">🐓</option>
+                                        <option value="dog">🐕</option>
+                                        <option value="pig">🐖</option>
+                                        <option value="elephant">🐘</option>
+                                        <option value="lion">🦁</option>
+                                    </select>
+                                    <div class="custom-select-line"></div>
+                                    <div class="custom-select-arrow">▼
+                                    </div>
+                                </div>
+
+                                <button id="add-animal-btn">Add new</button>
+
+                            </div>
+
+                            <div class="temp">
+                            </div>
+
                         </div>
-                        <div id="sample-text-control">
-                            <p class="sample">SampleText</p>
-                            <input type="color" name="color" id="color-ipn">
-                            <button id="style-btn">🛠️</button>
+
+                        <div class="drag-drop-grid">
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐁</div>
+                                <div class="emoji-label">Mouse</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐃</div>
+                                <div class="emoji-label">Buffalo</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐅</div>
+                                <div class="emoji-label">Tiger</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐈</div>
+                                <div class="emoji-label">Cat</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐕</div>
+                                <div class="emoji-label">Dog</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐘</div>
+                                <div class="emoji-label">Elephant</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🦁</div>
+                                <div class="emoji-label">Lion</div>
+                            </div>
+                            <div class="drag-drop-item">
+                                <div class="emoji">🐍</div>
+                                <div class="emoji-label">Snake</div>
+                            </div>
                         </div>
 
                     </div>
-                    <div id="main-text">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Nullam euismod nunc arcu,
-                        at auctor odio dapibus id. Curabitur sapien velit,
-                        fermentum sed lacinia a, mollis vitae quam. Donec nec
-                        dolor sit amet sem blandit lobortis ac nec est. Aenean
-                        feugiat neque vel malesuada bibendum. Aenean non massa
-                        massa. Proin vel consequat risus. Nunc congue augue in
-                        mauris sagittis, eu elementum urna iaculis. Fusce
-                        sollicitudin aliquet tempor. Nunc in commodo ante. Fusce
-                        nec ullamcorper lacus, eu placerat neque. Aliquam
-                        viverra scelerisque ullamcorper.
-
-                        In quis fermentum tellus. Nullam non pellentesque
-                        ligula, vel pulvinar erat. Praesent accumsan enim nec
-                        nisi tempus aliquet et nec risus. Nulla facilisi. Fusce
-                        non orci quis erat volutpat euismod et non orci. Duis
-                        egestas finibus velit, ac viverra orci. Maecenas nec
-                        orci a nisl dapibus blandit. Nunc eget eros dapibus,
-                        lobortis nisi vel, aliquam urna. Nullam posuere sapien
-                        vitae dui sodales efficitur in ac nisi. Aenean sodales
-                        velit ut lorem porta lacinia. Pellentesque sed tempus
-                        nisi. Phasellus tincidunt velit odio, id mollis diam
-                        ultrices ac.</div>
                 </div>
 
             </div>
 
         </div>
 
-        </div>
-
     </body>
 
 </html>
+</div>
+</div>
