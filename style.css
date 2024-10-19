@@ -331,3 +331,9 @@ button {
     background-color: #ea9135;
     color: #f4dab5;
 }
+
+/* Dragging */
+
+.dragging {
+    opacity: 0.5;
+}
