@@ -1,51 +1,57 @@
+const style = {
+    color: $("#color-ipn").val(),
+    backgroundColor: $("#background-ipn").val(),
+    isBold: false,
+    isItalic: $("#italic-ipn").prop("checked"),
+    isUnderline: $("#underline-ipn").prop("checked"),
+};
+
+let isHighlighting = false;
+let searchPattern = new RegExp("", "g");
+const originalText = $("#main-text").text();
+
+const handleStyleChange = function () {
+    changeStyle("#sample-text");
+
+    const $mainText = $("#main-text");
+    const text = $mainText.text();
+    if (isHighlighting) {
+        const regex = searchPattern;
+
+        const newText = text.replace(regex, function (match) {
+            return `<span>${match}</span>`;
+        });
+
+        $mainText.html(newText);
+
+        changeStyle("#main-text span");
+    } else {
+        $mainText.html(text.replace(/<span>/g, "").replace(/<\/span>/g, ""));
+    }
+};
+
+const changeStyle = function (selector) {
+    $(selector).css({
+        color: style.color,
+        backgroundColor: style.backgroundColor,
+        fontWeight: style.isBold ? "bold" : "normal",
+        fontStyle: style.isItalic ? "italic" : "normal",
+        textDecoration: style.isUnderline ? "underline" : "none",
+    });
+};
+
 $(document).ready(function () {
+    handleStyleChange();
+
     $("#style-btn").click(function () {
         $(".style-drop-down").toggle();
     });
 
-    const style = {
-        color: "",
-        backgroundColor: "",
-        isBold: false,
-        isItalic: false,
-        isUnderline: false,
-    };
+    $("#search-ipn").on("input", function () {
+        searchPattern = new RegExp($(this).val(), "g");
 
-    let isHighlighting = false;
-
-    const changeStyle = function (selector) {
-        $(selector).css({
-            color: style.color,
-            backgroundColor: style.backgroundColor,
-            fontWeight: style.isBold ? "bold" : "normal",
-            fontStyle: style.isItalic ? "italic" : "normal",
-            textDecoration: style.isUnderline ? "underline" : "none",
-        });
-    };
-
-    const originalText = $("#main-text").text();
-
-    const handleStyleChange = function () {
-        changeStyle("#sample-text");
-
-        const $mainText = $("#main-text");
-        const text = $mainText.text();
-        if (isHighlighting) {
-            const regex = /a/g;
-
-            const newText = text.replace(regex, function (match) {
-                return `<span>${match}</span>`;
-            });
-
-            $mainText.html(newText);
-
-            changeStyle("#main-text span");
-        } else {
-            $mainText.html(
-                text.replace(/<span>/g, "").replace(/<\/span>/g, "")
-            );
-        }
-    };
+        handleStyleChange();
+    });
 
     $("#highlight-btn").click(function () {
         isHighlighting = !isHighlighting;
@@ -55,11 +61,6 @@ $(document).ready(function () {
 
     $("#reset-btn").click(function () {
         $("#main-text").text(originalText);
-        style.color = "";
-        style.backgroundColor = "";
-        style.isBold = false;
-        style.isItalic = false;
-        style.isUnderline = false;
 
         $("#color-ipn").val("");
         $("#background-ipn").val("");
@@ -72,7 +73,7 @@ $(document).ready(function () {
 
     $("#delete-btn").click(function () {
         const text = $("#main-text").text();
-        const newText = text.replace(/a/g, "");
+        const newText = text.replace(searchPattern, "");
 
         $("#main-text").text(newText);
 
