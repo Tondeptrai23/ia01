@@ -338,7 +338,7 @@ button:hover {
     pointer-events: none;
 }
 
-.drag-drop-grid {
+#drag-drop-grid {
     display: grid;
     grid-template-columns: repeat(5, 180px);
     gap: 10px;
