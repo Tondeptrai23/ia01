@@ -213,6 +213,10 @@ button {
     font-size: 20px;
 }
 
+#sample-text {
+    min-width: 90px;
+}
+
 #main-text {
     padding: 10px;
     font-size: 22px;
