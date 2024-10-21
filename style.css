@@ -346,10 +346,17 @@ button:hover {
 }
 
 .drag-drop-item {
+    user-select: none;
     text-align: center;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.drag-drop-item.ui-draggable-dragging,
+.drag-drop-item.dragging {
+    transition: none !important;
 }
 
 .drag-drop-item .emoji {
@@ -362,6 +369,13 @@ button:hover {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
+}
+
+.drag-drop-item.place-holder {
+    background-color: #f4dab5;
+    border: 1px solid #ea9135;
+    border-radius: 5px;
+    visibility: visible;
 }
 
 /* Footer */
