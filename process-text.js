@@ -62,11 +62,17 @@ $(document).ready(function () {
     $("#reset-btn").click(function () {
         $("#main-text").text(originalText);
 
-        $("#color-ipn").val("");
-        $("#background-ipn").val("");
+        $("#color-ipn").val("#ec0000");
+        $("#background-ipn").val("#ecca00");
         $("#bold-ipn").prop("checked", false);
-        $("#italic-ipn").prop("checked", false);
-        $("#underline-ipn").prop("checked", false);
+        $("#italic-ipn").prop("checked", true);
+        $("#underline-ipn").prop("checked", true);
+
+        style.color = $("#color-ipn").val();
+        style.backgroundColor = $("#background-ipn").val();
+        style.isBold = false;
+        style.isItalic = $("#italic-ipn").prop("checked");
+        style.isUnderline = $("#underline-ipn").prop("checked");
 
         handleStyleChange();
     });
