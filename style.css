@@ -35,7 +35,7 @@ button:hover {
 }
 
 .header h1 {
-    padding: 15px;
+    padding: 16px;
     letter-spacing: 5px;
 
     text-align: center;
@@ -44,7 +44,7 @@ button:hover {
     color: #8fe1e2;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
         1px 1px 0 #000, 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to bottom, #77a7f3, #8eb5f5);
+    background: linear-gradient(to bottom, #5891ee, #8eb5f5);
 }
 
 /* Navigation */

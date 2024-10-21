@@ -10,4 +10,14 @@ $(document).ready(function () {
             "selected"
         );
     });
+
+    $(".footer a").click(function (e) {
+        e.preventDefault();
+
+        $(".nav a").removeClass("selected");
+        $(".footer a").removeClass("selected");
+
+        $(this).addClass("selected");
+        $(".nav a[href='" + $(this).attr("href") + "']").addClass("selected");
+    });
 });
