@@ -24,6 +24,21 @@ let originIndex = 0;
 let changeIndex = 0;
 let draggingElement = null;
 
+$(window).resize(function () {
+    positions = [];
+
+    $(".drag-drop-item")
+        .not(".dragging")
+        .not(".ui-draggable-dragging")
+        .each(function (index) {
+            positions.push({
+                index: index,
+                left: $(this).offset().left,
+                top: $(this).offset().top,
+            });
+        });
+});
+
 $(document).ready(function () {
     $("#add-animal-btn").click(function () {
         const $animalInput = $("#animal-dropdown");
@@ -104,6 +119,7 @@ const makeDraggable = (element) => {
                     });
 
                 $(ui.helper).css({
+                    zIndex: 1000,
                     width: uiWidth,
                     height: uiHeight,
                 });
